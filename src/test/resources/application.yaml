@@ -1,0 +1,24 @@
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "*"
+hello:
+  country: "UK"
+  greeting: "Hello World!"
+  language: "english"
+
+spring:
+  main:
+    allow-bean-definition-overriding:
+      true
+  application:
+    name:
+      EbookStore
+application:
+  uploaddir:
+    /tmp
+
+
+
+

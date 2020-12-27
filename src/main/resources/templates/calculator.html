@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<p>Add two variables</p>
+
+
+<form method="POST" th:action="@{/calculator}" th:object="${calculator}">
+    <lable>x</lable>
+    <input type="text" th:field="*{x}"/>
+    <lable>y</lable>
+    <input type="text" th:field="*{y}"/>
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>
