@@ -10,7 +10,6 @@ import org.springframework.validation.annotation.Validated;
 @Validated
 public class ApplicationProperties {
 
-
     private String uploaddir;
 
     @NonNull

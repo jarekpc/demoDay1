@@ -1,0 +1,40 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+hello:
+  country: "UK"
+  greeting: "Hello World!"
+  language: "english"
+
+application:
+  uploaddir:
+    /tmp
+
+spring:
+  main:
+    allow-bean-definition-overriding:
+      true
+  application:
+    name:
+      EbookStore
+  security:
+    user:
+      name: user
+      password: password
+      roles: AUTHOR, CUSTOMER
+  datasource:
+    url: jdbc:mysql://172.17.0.1:3306/hello
+    username: jarek
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database: MYSQL
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create-drop
+
+
+

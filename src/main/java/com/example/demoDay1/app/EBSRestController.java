@@ -5,6 +5,7 @@ import com.example.demoDay1.service.EbookStoreService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -43,6 +44,7 @@ public class EBSRestController {
     @PostMapping(value = "/rest/book", produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     @ApiOperation(value = "created book")
 //    @ApiResponse(code = {@ApiResponse(code = 201, message = "created Book")})
+    @ApiResponse(responseCode = "201", description = "creat Book:)")
     public ResponseEntity<Object> newBook(@RequestBody Book newBook) {
         Book saveBook = ebookStoreService.savedBook(newBook);
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(saveBook.getId()).toUri();
