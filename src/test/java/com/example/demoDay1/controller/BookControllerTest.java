@@ -22,6 +22,6 @@ public class BookControllerTest {
     public void doGetTest() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/books/list")
         .accept(MediaType.TEXT_HTML))
-                .andExpect(status().isOk());
+                .andExpect(status().is(200));
     }
 }

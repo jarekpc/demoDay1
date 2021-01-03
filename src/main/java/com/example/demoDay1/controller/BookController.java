@@ -84,7 +84,7 @@ public class BookController {
     }
 
     @PostMapping("/search")
-    public String searchForBooks(Model model, @RequestParam("searching") String search) {
+    public String searchForBooks(Model model, @RequestParam(value = "searchstring") String search) {
         List<Book> allBooks = new ArrayList<>();
         allBooks = bookRepository.findBooksByTitle(search);
         model.addAttribute("booklist", allBooks);

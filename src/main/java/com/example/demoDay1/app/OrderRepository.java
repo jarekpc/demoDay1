@@ -10,13 +10,13 @@ import java.util.List;
 @Repository
 public interface OrderRepository extends JpaRepository<Order, Long> {
 
-    @Query(value = "select ifnull(max(o.id),0) from Orders o", nativeQuery = true)
+    @Query(value = "select ifnull(max(o.id),0) from orders o", nativeQuery = true)
     Long getMaxId();
 
-    @Query(value = "select ifnull(max(o.order_num), 0) from Orders o where o.person_id=:id", nativeQuery = true)
+    @Query(value = "select ifnull(max(o.order_num), 0) from orders o where o.person_id=:id", nativeQuery = true)
     Long getMaxOrdernumFromCustomer(@Param("id") Long id);
 
-    @Query(value = "select * from Orders o where o.person_id=:id", nativeQuery = true)
+    @Query(value = "select * from orders o where o.person_id=:id", nativeQuery = true)
     List<Order> getOrdersByCustomer(@Param("id") Long id);
 
 }
